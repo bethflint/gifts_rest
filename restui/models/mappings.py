@@ -601,7 +601,7 @@ class MappingView(models.Model):
     uniprot_id = models.BigIntegerField(blank=True, null=True)
     transcript_id = models.BigIntegerField(blank=True, null=True)
     alignment_difference = models.IntegerField(blank=True, null=True)
-    status = models.ForeignKey(CvUeStatus, db_column='status', blank=True, null=True, on_delete=models.SET_NULL)
+    status = models.BigIntegerField(blank=True, null=True)
     first_release_mapping_history_id = models.BigIntegerField(blank=True, null=True)
     uniprot_acc = models.CharField(max_length=30, blank=True, null=True)
     uniprot_tax_id = models.BigIntegerField(blank=True, null=True)
