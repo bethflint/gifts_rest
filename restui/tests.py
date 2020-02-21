@@ -271,10 +271,7 @@ class EnsemblEnsembl(APITestCase):
             format='json'
         )
         self.assertEqual(response.status_code, 201)
-        self.assertEqual(response.data['success'], 1)
-
-        gene = EnsemblGene.objects.all()
-        self.assertEqual(gene.count(), 9)
+        self.assertIn('task_id', response.data)
 
     def test_latest_assembly_request(self):
         client = APIClient()
@@ -295,7 +292,7 @@ class EnsemblEnsembl(APITestCase):
         response = client.get('/ensembl/species_history/2/')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data['assembly_accession'], 'GRCh38')
-        self.assertEqual(response.data['alignment_status'], 'ALIGNMENT_COMPLETE')
+        self.assertEqual(response.data['alignment_status'], 'ALIGNMENT_COMPLETED')
 
     def test_transcript_request(self):
         client = APIClient()
@@ -667,11 +664,11 @@ class EnsemblService(APITestCase):
         response = client.get('/service/status')
         self.assertEqual(response.status_code, 200)
         self.assertIn('ensembl_load_running', response.data)
-        self.assertEqual(response.data['ensembl_load_running'], 'true')
+        self.assertEqual(response.data['ensembl_load_running'], False)
         self.assertIn('uniprot_load_running', response.data)
-        self.assertEqual(response.data['uniprot_load_running'], 'true')
+        self.assertEqual(response.data['uniprot_load_running'], False)
         self.assertIn('gifts_mapping_running', response.data)
-        self.assertEqual(response.data['gifts_mapping_running'], 'true')
+        self.assertEqual(response.data['gifts_mapping_running'], False)
 
 
 class EnsemblUniProt(APITestCase):
