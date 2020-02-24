@@ -9,7 +9,7 @@
             "ensembl_release": "87",
             "status": "LOAD_COMPLETE",
             "time_loaded": "2019-05-01T00:00:00Z",
-            "alignment_status": "ALIGNMENT_COMPLETE"
+            "alignment_status": "ALIGNMENT_COMPLETED"
         }
     },
     {
@@ -22,7 +22,7 @@
             "ensembl_release": "95",
             "status": "LOAD_COMPLETE",
             "time_loaded": "2019-05-01T00:00:00Z",
-            "alignment_status": "ALIGNMENT_COMPLETE"
+            "alignment_status": "ALIGNMENT_COMPLETED"
         }
     }
 ]

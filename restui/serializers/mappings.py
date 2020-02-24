@@ -326,9 +326,6 @@ class MappingViewSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-    status = serializers.StringRelatedField()
-
-
 class MappingViewsSerializer(serializers.Serializer):
     """
     Serialize data in call to mappings/ endpoint

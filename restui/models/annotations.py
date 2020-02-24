@@ -45,9 +45,6 @@ class CvUeStatus(models.Model):
         managed = False
         db_table = 'cv_ue_status'
 
-    def __str__(self):
-        return self.description
-
 # schema supporing editing comments/status for mapped entries
 
 class UeMappingComment(models.Model):

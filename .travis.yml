@@ -23,6 +23,7 @@ python:
 
 services:
   - postgresql
+  - redis-server
 
 addons:
   postgresql: 10

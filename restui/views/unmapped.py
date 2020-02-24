@@ -113,6 +113,8 @@ class UnmappedDetailed(APIView):
 
         serializer = UnmappedEntrySerializer(data)
 
+        serializer.data['entry']['status'] = MappingView.status_description(serializer.data['entry']['status'])
+
         return Response(serializer.data)
 
 

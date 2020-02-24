@@ -90,7 +90,7 @@ class AlignmentByAlignmentRunFetch(generics.ListAPIView):
         except (AlignmentRun.DoesNotExist, IndexError):
             raise Http404
 
-        return Alignment.objects.filter(alignment_run=alignment_run)
+        return Alignment.objects.filter(alignment_run=alignment_run).order_by('alignment_id')
 
 
 #
